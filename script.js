@@ -36,7 +36,7 @@ function agregarLibro(objeto, callback) { //Callback = leerDatos
     biblioteca.libros.push(objeto);
     setTimeout(() => {
         console.log("Actualización");
-        lecturaJSON(biblioteca);
+        //lecturaJSON(biblioteca);
     }, 1000);
 };
 
@@ -49,7 +49,7 @@ function actualizarDisponibilidad(titulo, nuevoEstado) {
             console.log(`Libro: ${titulo}, Disponibilidad actual: ${libro.disponible ? 'Disponible' : 'Prestado'}`);
             libro.disponible = nuevoEstado; // actualizar disponibilidad
             console.log(`→ Disponibilidad actualizada: ${libro.disponible ? 'Disponible' : 'Prestado'}`);
-            lecturaJSON(biblioteca); // mostrar el inventario actualizado
+            //lecturaJSON(biblioteca); // mostrar el inventario actualizado
         } else {
             console.log("Libro no encontrado");
         }
@@ -59,7 +59,7 @@ function actualizarDisponibilidad(titulo, nuevoEstado) {
 
 const prueba = { "titulo": "Dummy", "autor": "Dummy", "genero": "Dummy", "disponible": true };
 
-//agregarLibro(prueba, leerDatos);
-//leerDatos(lecturaJSON, biblioteca);
+agregarLibro(prueba, leerDatos);
+leerDatos(lecturaJSON, biblioteca);
 //console.log(biblioteca.libros[4].titulo)
 actualizarDisponibilidad("1984", false)
